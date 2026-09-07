@@ -182,3 +182,76 @@
     border-right-color: var(--border);
   }
 }
+
+.app-shell {
+  min-height: 100vh;
+  background: #f5f1e8;
+  color: #203333;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid #d6d2c6;
+  background: #f5f1e8;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #203333;
+  font: 700 15px/1 var(--heading);
+  letter-spacing: .08em;
+  text-decoration: none;
+}
+
+.brand small { color: #e35d3f; font-size: 9px; letter-spacing: .15em; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #e35d3f; color: #fff8eb; font: 800 20px/1 Georgia, serif; }
+.main-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 20px; }
+.main-nav a { color: #66716d; font-size: 13px; text-decoration: none; }
+.main-nav a:hover, .main-nav a.active { color: #e35d3f; }
+.page-content { width: min(100%, 1120px); margin: 0 auto; padding: clamp(54px, 8vw, 104px) clamp(20px, 7vw, 96px); box-sizing: border-box; }
+.overview, .data-page { text-align: left; }
+.eyebrow, .card-kicker, .level { color: #e35d3f; font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+.overview h1, .data-page h1 { max-width: 760px; margin: 14px 0 18px; color: #203333; font: 700 clamp(42px, 7vw, 82px)/.95 Georgia, serif; letter-spacing: -.04em; }
+.lede { max-width: 600px; color: #66716d; font-size: 18px; }
+.overview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 76px; }
+.overview-note { padding: 28px; border-top: 2px solid #203333; }
+.accent-note { border-color: #e35d3f; }
+.note-number { color: #e35d3f; font: 700 12px var(--mono); }
+.overview-note h2 { margin-top: 32px; color: #203333; font: 700 27px/1.1 Georgia, serif; }
+.overview-note p { color: #66716d; }
+.data-page h1 { font-size: clamp(46px, 8vw, 76px); }
+.data-list, .leaderboard-list { margin-top: 54px; border-top: 1px solid #d6d2c6; }
+.data-row, .leaderboard-row { display: grid; grid-template-columns: 1.6fr 1fr auto auto; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid #d6d2c6; }
+.data-row strong, .leaderboard-row strong { display: block; color: #203333; }
+.data-row span, .data-row time, .row-detail, .leaderboard-row span { color: #66716d; font-size: 13px; }
+.points, .leaderboard-row b { color: #e35d3f; white-space: nowrap; }
+.leaderboard-row { grid-template-columns: 56px 1.5fr 1fr auto; }
+.rank { color: #e35d3f !important; font: 700 20px var(--mono); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 54px; }
+.team-card, .user-card, .workout-card { padding: 26px; border: 1px solid #d6d2c6; background: #fbf8f0; }
+.team-card h2, .user-card h2, .workout-card h2 { margin-top: 28px; color: #203333; font: 700 25px/1.1 Georgia, serif; }
+.team-card p, .user-card p, .workout-card p { color: #66716d; font-size: 14px; }
+.user-card { display: flex; align-items: center; gap: 18px; }
+.user-card h2 { margin: 0 0 4px; }
+.avatar { display: grid; flex: 0 0 48px; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #203333; color: #f5f1e8; font: 700 22px Georgia, serif; }
+.level { display: inline-block; margin-top: 12px; font-size: 10px; }
+.workout-top { display: flex; justify-content: space-between; color: #66716d; font-size: 13px; }
+.workout-card ul { padding-left: 18px; color: #66716d; font-size: 14px; }
+.empty-state { display: grid; gap: 8px; margin-top: 54px; padding: 28px; border: 1px dashed #d6d2c6; color: #66716d; }
+.empty-state strong { color: #203333; }
+.app-footer { padding: 24px clamp(20px, 5vw, 64px); border-top: 1px solid #d6d2c6; color: #66716d; font: 11px var(--mono); letter-spacing: .1em; }
+
+@media (max-width: 720px) {
+  .app-header { align-items: flex-start; flex-direction: column; }
+  .main-nav { justify-content: flex-start; }
+  .overview-grid { grid-template-columns: 1fr; margin-top: 48px; }
+  .data-row, .leaderboard-row { grid-template-columns: 1fr auto; gap: 8px; }
+  .data-row time, .leaderboard-row span { grid-column: 1; }
+  .data-row .points, .leaderboard-row b { grid-column: 2; grid-row: 1 / span 2; }
+}
